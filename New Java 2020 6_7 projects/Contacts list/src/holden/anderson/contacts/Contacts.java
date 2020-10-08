@@ -29,5 +29,11 @@ public class Contacts {
 	
 	
 	}
-
+	public static void main(String[] args ) {
+		String firstName = "Holden";
+		String lastName = new String();
+		lastName = "Anderson";
+		String midName; 
+		midName = "Not Sean";
+	}
 }
