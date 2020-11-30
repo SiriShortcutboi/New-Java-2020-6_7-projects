@@ -2,15 +2,14 @@ package holden.anderson.car;
 
 import java.awt.Color;
 import java.util.Scanner;
-
+import Vehicle; 
 import holden.anderson.carcomponents.Engine;
 
-public class Car {
+
+public class Car extends Vehicle{
 	String color;
 	int numDoors;
 	String doorType;
-	int numWheels;
-	String brand;
 	Long hardware;
 	double price;
 	Engine engine = new Engine();
@@ -27,15 +26,11 @@ public class Car {
 		doorType = input.nextLine();	
 		System.out.println("How many wheels should your car have?");
 		input.nextLine();
-		numWheels = input.nextInt();
-		input.nextLine();
-		System.out.println("What brand should your car be?");
-		brand = input.nextLine();
-		System.out.println("What hardware should your car have?");
 		hardware = input.nextLong();
 		System.out.println("What hardware should your car have?");
 		System.out.println("What price should your car have?");
 		input.nextLine();
+		price=(25000.00);
 		input.close();
 		
 		
@@ -52,6 +47,8 @@ public class Car {
 			System.out.println("I'm driving");
 		}
 	}
-	
+	public void start() {
+		System.out.println("you started the car");
+	}
 }
 
