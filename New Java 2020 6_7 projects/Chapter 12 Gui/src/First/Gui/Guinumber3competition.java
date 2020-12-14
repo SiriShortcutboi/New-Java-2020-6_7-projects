@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.Date;
 public class Guinumber3competition implements ActionListener {
 	JLabel name_lbl3;
 	JTextField name_tb3;
@@ -41,6 +43,7 @@ public class Guinumber3competition implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Date startTime = Calendar.getInstance().getTime();
 		numclicks++;
 		Click_bttn.setText("Clicks "+Integer.toString(numclicks));
 		if (numclicks == 10) {
@@ -55,5 +58,30 @@ public class Guinumber3competition implements ActionListener {
 			Font font = new Font("Verdana", Font.BOLD, 30);
 			Click_bttn.setFont(font);
 		}
+		if (numclicks == 40) {
+			Font font = new Font("Verdana", Font.BOLD, 35);
+			Click_bttn.setFont(font);
+		}
+		if (numclicks == 50) {
+			Font font = new Font("Verdana", Font.BOLD, 40);
+			Click_bttn.setFont(font);
+			//JOptionPane.showMessageDialog(null,"Woah we're halfway there!");
+			mainframe3.getContentPane().setBackground(Color.GREEN);
+			mainframe3.getContentPane().setBackground(Color.WHITE);
+			mainframe3.getContentPane().setBackground(Color.GREEN);
+			mainframe3.getContentPane().setBackground(Color.WHITE);
+			mainframe3.getContentPane().setBackground(Color.GREEN);
+			mainframe3.getContentPane().setBackground(Color.WHITE);
+		}
+		if (numclicks >= 100) {
+			Date endTime= Calendar.getInstance().getTime();
+			mainframe3.getContentPane().setBackground(Color.GREEN);
+			JOptionPane.showMessageDialog(null,"You reacheed 100 clicks at "+ Calendar.getInstance().getTime());
+			
+			Runnable sound1 = (Runnable)Toolkit.getDefaultToolkit().getDesktopProperty("win.sound.error");
+			sound1.run();
+					
+		}
+		
 	}
 }
